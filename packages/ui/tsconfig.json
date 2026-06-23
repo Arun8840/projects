@@ -2,8 +2,17 @@
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "dist",
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "resolvePackageJsonImports": true
   },
-  "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ]
 }
