@@ -1,0 +1,15 @@
+{
+  "tailwindCSS.experimental.configFile": "packages/tailwind-config/shared-styles.css",
+  "tailwindCSS.include": [
+    "**/*.css",
+    "**/*.tsx",
+    "**/*.ts"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    "cn\\(([^)]*)\\)"
+  ],
+  "css.validate": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}
