@@ -5,8 +5,8 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "check-types": "turbo run check-types",
-    "lint": "turbo run //#lint",
-    "lint:fix": "turbo run //#lint:fix"
+    "lint": "biome check .",
+    "lint:fix": "biome check --write --unsafe ."
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
