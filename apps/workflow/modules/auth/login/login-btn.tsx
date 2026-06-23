@@ -1,16 +1,16 @@
-"use client"
+'use client';
 
-import { Button } from "@repo/ui/button"
-import { useFormStatus } from "react-dom"
+import { Button } from '@repo/ui/button';
+import { useFormStatus } from 'react-dom';
 
 const LoginButton = () => {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
 
   return (
-    <Button className="w-full" size={"sm"} type="submit" disabled={pending}>
-      {pending ? "Submitting..." : "Submit"}
+    <Button className="w-full" size={'sm'} type="submit" disabled={pending}>
+      {pending ? 'Submitting...' : 'Submit'}
     </Button>
-  )
-}
+  );
+};
 
-export default LoginButton
+export default LoginButton;

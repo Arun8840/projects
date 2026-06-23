@@ -1,8 +1,10 @@
-"use client"
+'use client';
 
-import { useForm } from "@conform-to/react"
-import { parseWithZod } from "@conform-to/zod"
-import { Button } from "@repo/ui/button"
+import { registerSchema } from '@/models/schema';
+import { PasswordField } from '@/modules/auth/password-field';
+import { useForm } from '@conform-to/react';
+import { parseWithZod } from '@conform-to/zod';
+import { Button } from '@repo/ui/button';
 import {
   Card,
   CardContent,
@@ -10,26 +12,24 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/ui/card"
-import { Field, FieldError, FieldGroup, FieldLabel } from "@repo/ui/field"
-import { Input } from "@repo/ui/input"
-import Link from "next/link"
-import { useActionState } from "react"
-import { registerSchema } from "@/models/schema"
-import { PasswordField } from "@/modules/auth/password-field"
-import { register } from "./_action"
-import RegisterButton from "./register-btn"
+} from '@repo/ui/card';
+import { Field, FieldError, FieldGroup, FieldLabel } from '@repo/ui/field';
+import { Input } from '@repo/ui/input';
+import Link from 'next/link';
+import { useActionState } from 'react';
+import { register } from './_action';
+import RegisterButton from './register-btn';
 
 function Register() {
-  const [lastResult, action] = useActionState(register, undefined)
+  const [lastResult, action] = useActionState(register, undefined);
   const [form, fields] = useForm({
     lastResult,
     onValidate({ formData }) {
-      return parseWithZod(formData, { schema: registerSchema })
+      return parseWithZod(formData, { schema: registerSchema });
     },
-    shouldValidate: "onBlur",
-    shouldRevalidate: "onInput",
-  })
+    shouldValidate: 'onBlur',
+    shouldRevalidate: 'onInput',
+  });
 
   return (
     <form
@@ -45,16 +45,11 @@ function Register() {
             W
           </div>
           <CardTitle>Create your account</CardTitle>
-          <CardDescription>
-            Sign up to start building your workflow automation.
-          </CardDescription>
+          <CardDescription>Sign up to start building your workflow automation.</CardDescription>
         </CardHeader>
         <CardContent>
           {form.errors && (
-            <div
-              role="alert"
-              className="text-destructive text-sm font-normal mb-4"
-            >
+            <div role="alert" className="text-destructive text-sm font-normal mb-4">
               {form.errors}
             </div>
           )}
@@ -107,13 +102,13 @@ function Register() {
         </CardContent>
         <CardFooter className="flex-col">
           <RegisterButton />
-          <Button variant="link" className="w-full" size={"sm"} asChild>
+          <Button variant="link" className="w-full" size={'sm'} asChild>
             <Link href="/auth/login">Already have an account? Login</Link>
           </Button>
         </CardFooter>
       </Card>
     </form>
-  )
+  );
 }
 
-export default Register
+export default Register;
