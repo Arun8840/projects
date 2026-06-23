@@ -1,7 +1,7 @@
 'use client';
+import { Input } from '@repo/ui/input';
 
 import { Field, FieldError, FieldLabel } from '@repo/ui/field';
-import { Input } from '@repo/ui/input';
 import { Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
 
