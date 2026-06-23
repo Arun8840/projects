@@ -7,9 +7,5 @@ export function Gradient({
   conic?: boolean;
   className?: string;
 }) {
-  return (
-    <span
-      className='text-red-500'
-    />
-  );
+  return <span className="text-red-500" />;
 }
