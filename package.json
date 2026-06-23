@@ -2,15 +2,14 @@
   "name": "with-tailwind",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build": "turbo run build",
     "check-types": "turbo run check-types",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint": "turbo run //#lint",
+    "lint:fix": "turbo run //#lint:fix"
   },
   "devDependencies": {
-    "prettier": "^3.8.4",
-    "prettier-plugin-tailwindcss": "^0.7.4",
+    "@biomejs/biome": "1.9.4",
     "turbo": "^2.9.18"
   },
   "packageManager": "pnpm@10.19.0",
