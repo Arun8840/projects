@@ -1,5 +1,5 @@
-import Register from "@/modules/auth/register"
+import Register from '@/modules/auth/register';
 
 export default function RegisterPage() {
-  return <Register />
+  return <Register />;
 }
