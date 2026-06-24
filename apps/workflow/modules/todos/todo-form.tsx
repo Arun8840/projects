@@ -36,18 +36,23 @@ export function TodoForm() {
       return;
     }
 
-    try {
-      await createTodo({ title: submission.value.title });
-      toast.success('Todo created');
-      setLastResult(null);
-      setFormKey((k) => k + 1);
-    } catch {
-      setLastResult(
-        submission.reply({
-          formErrors: ['Failed to create todo. Please try again.'],
-        }),
-      );
-    }
+    await createTodo(
+      { title: submission.value.title },
+      {
+        onSuccess(data) {
+          const res = data?.data;
+          toast.success(`Todo created: ${res?.title}`);
+          setLastResult(null);
+          setFormKey((k) => k + 1);
+        },
+        onError(error) {
+          const err = error?.message;
+          toast.error(err || 'Failed to create todo. Please try again.');
+          setLastResult(null);
+          setFormKey((k) => k + 1);
+        },
+      },
+    );
   };
 
   return (
