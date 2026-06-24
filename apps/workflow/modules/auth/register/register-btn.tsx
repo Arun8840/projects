@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@repo/ui/button';
+import { DotLoader } from '@repo/ui/dot-loader';
 import { useFormStatus } from 'react-dom';
 
 const RegisterButton = () => {
@@ -8,7 +9,7 @@ const RegisterButton = () => {
 
   return (
     <Button className="w-full" size={'sm'} type="submit" disabled={pending}>
-      {pending ? 'Creating Account...' : 'Create Account'}
+      {pending ? <DotLoader speed="fast" /> : 'Submit'}
     </Button>
   );
 };

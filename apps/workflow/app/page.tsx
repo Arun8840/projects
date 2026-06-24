@@ -1,13 +1,5 @@
-import { Button } from '@repo/ui/button';
-import { Sparkle } from 'lucide-react';
+import TodoItems from '@/modules/todos';
 
 export default function Page() {
-  return (
-    <main className="bg-white min-h-screen flex justify-center items-center">
-      <Button size={'sm'}>
-        <Sparkle />
-        hello world
-      </Button>
-    </main>
-  );
+  return <TodoItems />;
 }

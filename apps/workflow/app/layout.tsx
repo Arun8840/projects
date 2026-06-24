@@ -2,6 +2,8 @@ import { GeistSans } from 'geist/font/sans';
 import type { Metadata } from 'next';
 import '@repo/ui/styles.css';
 import './globals.css';
+import QueryClientProviderWrapper from '@/providers/queryClient-provider';
+import { Toaster } from '@repo/ui/sonner';
 
 export const metadata: Metadata = {
   title: 'Workflow',
@@ -15,7 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={GeistSans.className}>{children}</body>
+      <body className={GeistSans.className}>
+        <QueryClientProviderWrapper>
+          {children}
+          <Toaster />
+        </QueryClientProviderWrapper>
+      </body>
     </html>
   );
 }
